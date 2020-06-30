@@ -40,7 +40,8 @@ if [ $OS_NAME == "Darwin" ]; then
     echo "Complete to create symlinks for MacOS."
 elif [ $OS_NAME == "Linux" ]; then
     echo "### Create symlinks for Linux..."
-    echo "There's no symlinks for Linux."
+    ln -s $INSTALL_DIR/linux/.gitconfig $HOME/.gitconfig || echo "skipped"
+    echo "Complete to create symlinks for Linux."
 else
     echo "$OS_NAME is not supported."
     exit 1
