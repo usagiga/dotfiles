@@ -1,7 +1,7 @@
 # dotfiles
 
 My dotfiles for UNIX.
-This repository is inspired by [github.com/haru067/dotfiles](https://github.com/haru067/dotfiles) .
+This repository is inspired by [github.com/haru067/dotfiles](https://github.com/haru067/dotfiles) :ramen: .
 
 
 ## Installation
