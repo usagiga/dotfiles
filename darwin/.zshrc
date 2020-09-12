@@ -2,6 +2,7 @@
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
 export PATH="$PATH:${HOME}/.nodebrew/current/bin"
+export PATH="$PATH:${HOME}/go/bin"
 
 ### rbenv
 [[ -d ~/.rbenv ]] && \
