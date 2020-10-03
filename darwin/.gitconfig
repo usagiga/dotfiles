@@ -7,3 +7,5 @@
 	rebase = true
 [push]
 	default = current
+[core]
+	excludesFile = ~/.gitignore_global

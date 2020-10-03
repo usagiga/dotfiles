@@ -5,3 +5,5 @@
 	helper = store
 [pull]
     rebase = true
+[core]
+	excludesFile = ~/.gitignore_global
