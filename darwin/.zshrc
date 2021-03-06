@@ -12,5 +12,8 @@ eval "$(rbenv init -)"
 ### github.com/x-motemen/ghq
 export GHQ_ROOT="${HOME}/Project"
 
+### GnuPG
+export GPG_TTY=$(tty)
+
 ### fish
 exec fish
