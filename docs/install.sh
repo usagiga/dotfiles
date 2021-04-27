@@ -28,9 +28,12 @@ ln -s $INSTALL_DIR/.config/fish $HOME/.config || echo "skipped"
 
 
 if [ $OS_NAME == "Darwin" ]; then
+    mkdir -pv ${HOME}/.gnupg
+
     ln -s $INSTALL_DIR/darwin/.gitconfig $HOME/.gitconfig || echo "skipped"
     ln -s $INSTALL_DIR/darwin/.zshrc $HOME/.zshrc || echo "skipped"
     ln -s $INSTALL_DIR/darwin/.Brewfile $HOME/.Brewfile || echo "skipped"
+    ln -s $INSTALL_DIR/darwin/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf || echo "skipped"
     
     # Run `brew bundle --global`
     which brew
