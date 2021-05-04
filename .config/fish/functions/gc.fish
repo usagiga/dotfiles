@@ -1,4 +1,4 @@
-# Defined in - @ line 1
-function gc --description 'alias gc git commit -S -m'
-	git commit -S -m $argv;
+# Defined via `source`
+function gc --wraps='git commit -m' --description 'alias gc git commit -m'
+  git commit -m $argv; 
 end
