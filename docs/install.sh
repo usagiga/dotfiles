@@ -23,8 +23,8 @@ fi
 
 # Create symlink
 ln -s $INSTALL_DIR/.vimrc $HOME/.vimrc || echo "skipped"
-ln -s $INSTALL_DIR/.gitignore_global $HOME/.gitignore_global || echo "skipped"
 ln -s $INSTALL_DIR/.config/fish $HOME/.config || echo "skipped"
+ln -s $INSTALL_DIR/.config/git $HOME/.config || echo "skipped"
 
 
 if [ $OS_NAME == "Darwin" ]; then
