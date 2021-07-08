@@ -1,7 +1,6 @@
-### PATH
+### .NET Core
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
-export PATH="$PATH:${HOME}/go/bin"
 
 ### anyenv
 eval "$(anyenv init -)"
