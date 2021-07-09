@@ -1,5 +1,4 @@
 ### For linux
-
 # if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 #     ssh-agent > '/tmp/ssh-agent.env'
 # fi
