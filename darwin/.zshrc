@@ -13,9 +13,9 @@ export GPG_TTY=$(tty)
 
 ### source ~/.zshrc.d
 local RC_FILE_DIR="${HOME}/.zshrc.d"
-if [[ -e RC_FILE_DIR ]]; then
-    for RC_FILE in RC_FILE_DIR/*.sh; do
-        source RC_FILE
+if [[ -e $RC_FILE_DIR ]]; then
+    for RC_FILE in ${RC_FILE_DIR}/*.sh; do
+        source $RC_FILE
     done
 fi
 
