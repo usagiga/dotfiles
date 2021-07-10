@@ -8,7 +8,7 @@ GREEN="${ESC}[32m"
 CYAN="${ESC}[36m"
 
 INSTALL_DIR=${HOME}/Project/github.com/usagiga/dotfiles
-IGNORE_PATHS=".git docs darwin linux"
+IGNORE_PATHS=".git docs darwin linux dotfiles.init.d"
 
 function main() {
     # Clone or pull repo
@@ -34,6 +34,13 @@ function main() {
 
     echoH1 "Install ${OS_NAME} configuration files"
     genSymlinks ${INSTALL_DIR}/${OS_NAME} ${HOME}
+
+    # Run initialize scripts
+    echoH1 'Run common initialization scripts'
+    runScripts ${INSTALL_DIR}/dotfiles.init.d
+
+    echoH1 "Run ${OS_NAME} initialization scripts"
+    runScripts ${INSTALL_DIR}/${OS_NAME}/dotfiles.init.d
 
     # Done
     echoH1 'All tasks are done 🎉'
@@ -83,14 +90,13 @@ function genSymlinks() {
 
 # run scripts (WIP)
 function runScripts() {
-    # Run `brew bundle --global`
-    BREW_PATH="$(which brew || echo '')"
-    if [[ -z "${BREW_PATH}" ]]; then
-        echo 'Homebrew is not installed. After installing it, run `brew bundle --global` manually.'
-    else
-        # brew bundle --global
-        echo 'brew bundle'
+    local SRC_DIR=$1
+    if [[ ! -e $SRC_DIR ]]; then
+        echo "No file to run"
+        return 0
     fi
+
+    bash $SRC_DIR/*.sh
 }
 
 function echoH1() {
