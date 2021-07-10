@@ -7,17 +7,17 @@ BOLD="${ESC}[1m"
 GREEN="${ESC}[32m"
 CYAN="${ESC}[36m"
 
-INSTALL_DIR=${HOME}/Project/github.com/usagiga/dotfiles
+REPO_ROOT_DIR=${HOME}/Project/github.com/usagiga/dotfiles
 IGNORE_PATHS=".git docs darwin linux dotfiles.init.d"
 
 function main() {
     # Clone or pull repo
     echoH1 'Clone or pull github.com/usagiga/dotfiles'
-    mkdir -pv "$INSTALL_DIR"
-    if [[ ! -e "${INSTALL_DIR}/.git" ]]; then
-        git clone 'https://github.com/usagiga/dotfiles.git' "$INSTALL_DIR"
+    mkdir -pv "$REPO_ROOT_DIR"
+    if [[ ! -e "${REPO_ROOT_DIR}/.git" ]]; then
+        git clone 'https://github.com/usagiga/dotfiles.git' "$REPO_ROOT_DIR"
     else
-        cd "$INSTALL_DIR"
+        cd "$REPO_ROOT_DIR"
         git pull
     fi
     
@@ -30,17 +30,17 @@ function main() {
 
     # Generate symlinks
     echoH1 'Install common configuration files'
-    genSymlinks ${INSTALL_DIR} ${HOME}
+    genSymlinks ${REPO_ROOT_DIR} ${HOME}
 
     echoH1 "Install ${OS_NAME} configuration files"
-    genSymlinks ${INSTALL_DIR}/${OS_NAME} ${HOME}
+    genSymlinks ${REPO_ROOT_DIR}/${OS_NAME} ${HOME}
 
     # Run initialize scripts
     echoH1 'Run common initialization scripts'
-    runScripts ${INSTALL_DIR}/dotfiles.init.d
+    runScripts ${REPO_ROOT_DIR}/dotfiles.init.d
 
     echoH1 "Run ${OS_NAME} initialization scripts"
-    runScripts ${INSTALL_DIR}/${OS_NAME}/dotfiles.init.d
+    runScripts ${REPO_ROOT_DIR}/${OS_NAME}/dotfiles.init.d
 
     # Done
     echoH1 'All tasks are done 🎉'
@@ -57,7 +57,7 @@ function genSymlinks() {
 
         # if it should be ignored, ignore it
         for IGNORE in $IGNORE_PATHS; do
-            if [[ "${INSTALL_DIR}/${IGNORE}" = "${SRC_PATH}" ]]; then
+            if [[ "${REPO_ROOT_DIR}/${IGNORE}" = "${SRC_PATH}" ]]; then
                 # continue outer `for` loop
                 continue 2
             fi
