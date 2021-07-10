@@ -8,22 +8,9 @@ GREEN="${ESC}[32m"
 CYAN="${ESC}[36m"
 
 INSTALL_DIR=${HOME}/Project/github.com/usagiga/dotfiles
-IGNORE_PATHS=".git docs"
+IGNORE_PATHS=".git docs darwin linux"
 
 function main() {
-    # Use OS specific dirs
-    OS_NAME=$(uname -s)
-    if [[ $OS_NAME == "Darwin" ]]; then
-        # If MacOS, ignore Linux
-        IGNORE_PATHS="$IGNORE_PATHS linux"
-    elif [[ $OS_NAME == "Linux" ]]; then
-        # If Linux, ignore MacOS
-        IGNORE_PATHS="$IGNORE_PATHS darwin"
-    else
-        echo "$OS_NAME is not supported."
-        exit 1
-    fi
-
     # Clone or pull repo
     mkdir -pv "$INSTALL_DIR"
     if [[ ! -e "${INSTALL_DIR}/.git" ]]; then
@@ -32,8 +19,17 @@ function main() {
         cd "$INSTALL_DIR"
         git pull
     fi
+    
+    # Use OS specific dirs
+    OS_NAME="$(uname -s | awk '{print tolower($0)}')"
+    if [[ "${OS_NAME}" != 'darwin' && "${OS_NAME}" != 'linux' ]]; then
+        echo "$OS_NAME is not supported."
+        exit 1
+    fi
 
+    # Generate symlinks
     genSymlinks ${INSTALL_DIR} ${HOME}
+    genSymlinks ${INSTALL_DIR}/${OS_NAME} ${HOME}
 }
 
 # Create symlinks recursively
