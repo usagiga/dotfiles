@@ -12,6 +12,7 @@ IGNORE_PATHS=".git docs darwin linux"
 
 function main() {
     # Clone or pull repo
+    echoH1 'Clone or pull github.com/usagiga/dotfiles'
     mkdir -pv "$INSTALL_DIR"
     if [[ ! -e "${INSTALL_DIR}/.git" ]]; then
         git clone 'https://github.com/usagiga/dotfiles.git' "$INSTALL_DIR"
@@ -20,7 +21,7 @@ function main() {
         git pull
     fi
     
-    # Use OS specific dirs
+    # Guard unsupported OS
     OS_NAME="$(uname -s | awk '{print tolower($0)}')"
     if [[ "${OS_NAME}" != 'darwin' && "${OS_NAME}" != 'linux' ]]; then
         echo "$OS_NAME is not supported."
@@ -28,8 +29,14 @@ function main() {
     fi
 
     # Generate symlinks
+    echoH1 'Install common configuration files'
     genSymlinks ${INSTALL_DIR} ${HOME}
+
+    echoH1 "Install ${OS_NAME} configuration files"
     genSymlinks ${INSTALL_DIR}/${OS_NAME} ${HOME}
+
+    # Done
+    echoH1 'All tasks are done 🎉'
 }
 
 # Create symlinks recursively
@@ -51,7 +58,7 @@ function genSymlinks() {
 
         # If source is directory, make it
         if [ -d "${SRC_PATH}" ]; then
-            echo "${CYAN}> mkdir $DST_PATH${RESET}"
+            echoH2 "mkdir $DST_PATH"
             if [[ -e $DST_PATH ]]; then
                 echo 'directory exists. skipped'
             else
@@ -64,7 +71,7 @@ function genSymlinks() {
 
         # If source is file, create it as symlink
         if [[ -f "${SRC_PATH}" ]]; then
-            echo "${CYAN}> create symlink $DST_PATH${RESET}"
+            echoH2 "ln -s $DST_PATH"
             if [[ -e "$DST_PATH" ]]; then
                 echo 'symlink exists. skipped'
                 continue
@@ -84,6 +91,16 @@ function runScripts() {
         # brew bundle --global
         echo 'brew bundle'
     fi
+}
+
+function echoH1() {
+    echo ""
+    echo "${BOLD}${GREEN}### $1${RESET}"
+    echo ""
+}
+
+function echoH2() {
+    echo "${CYAN}$ $1${RESET}"
 }
 
 main
