@@ -20,4 +20,7 @@ if [[ -e $RC_FILE_DIR ]]; then
 fi
 
 ### fish
-exec fish
+if [[ -o interactive ]]; then
+    exec fish
+fi
+
