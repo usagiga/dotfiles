@@ -1,0 +1,22 @@
+name: "Run linter for shell scripts"
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.sh'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '**.sh'
+
+jobs:
+  lint-shell:
+    name: "Lint shell scripts"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Run shellcheck"
+        uses: ludeeus/action-shellcheck@master
