@@ -8,7 +8,7 @@ GREEN="${ESC}[32m"
 CYAN="${ESC}[36m"
 
 REPO_ROOT_DIR=${HOME}/Project/github.com/usagiga/dotfiles
-IGNORE_PATHS=".git docs darwin linux scripts dotfiles.init.d LICENSE README.md"
+IGNORE_PATHS=".git .github .idea docs darwin linux scripts dotfiles.init.d LICENSE README.md"
 
 function main() {
     # Clone or pull repo
