@@ -19,10 +19,12 @@ if [[ -e $RC_FILE_DIR ]]; then
     done
 fi
 
+### default editor
+export EDITOR=vim
+
 ### fish
 case $- in
     *i*)
         exec fish
         ;;
 esac
-
