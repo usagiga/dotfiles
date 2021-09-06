@@ -1,5 +1,10 @@
 #!/bin/bash
+
 set -euo pipefail
+
+if [[ -n ${DEBUG:+} ]]; then
+  set -x
+fi
 
 ESC=$(printf '\033')
 RESET="${ESC}[0m"
@@ -30,17 +35,17 @@ function main() {
 
     # Generate symlinks
     echoH1 'Install common configuration files'
-    genSymlinks ${REPO_ROOT_DIR} ${HOME}
+    genSymlinks "${REPO_ROOT_DIR}" "${HOME}"
 
     echoH1 "Install ${OS_NAME} configuration files"
-    genSymlinks ${REPO_ROOT_DIR}/${OS_NAME} ${HOME}
+    genSymlinks "${REPO_ROOT_DIR}/${OS_NAME}" "${HOME}"
 
     # Run initialize scripts
     echoH1 'Run common initialization scripts'
-    runScripts ${REPO_ROOT_DIR}/dotfiles.init.d
+    runScripts "${REPO_ROOT_DIR}/dotfiles.init.d"
 
     echoH1 "Run ${OS_NAME} initialization scripts"
-    runScripts ${REPO_ROOT_DIR}/${OS_NAME}/dotfiles.init.d
+    runScripts "${REPO_ROOT_DIR}/${OS_NAME}/dotfiles.init.d"
 
     # Done
     echoH1 'All tasks are done 🎉'
@@ -50,7 +55,9 @@ function main() {
 function genSymlinks() {
     local SRC_DIR=$1
     local DST_DIR=$2
-    local DOT_PATHS=$(ls -A ${SRC_DIR})
+    local DOT_PATHS
+
+    DOT_PATHS=$(ls -A "${SRC_DIR}")
     for DOT_PATH in $DOT_PATHS; do
         local SRC_PATH="${SRC_DIR}/${DOT_PATH}"
         local DST_PATH="${DST_DIR}/${DOT_PATH}"
@@ -72,7 +79,7 @@ function genSymlinks() {
                 mkdir -p "${DST_PATH}"
             fi
 
-            genSymlinks ${SRC_PATH} ${DST_PATH}
+            genSymlinks "${SRC_PATH}" "${DST_PATH}"
             continue
         fi
 
@@ -83,7 +90,7 @@ function genSymlinks() {
                 echo 'symlink exists. skipped'
                 continue
             fi
-            ln -s ${SRC_PATH} ${DST_PATH}
+            ln -s "${SRC_PATH}" "${DST_PATH}"
         fi
     done
 }
@@ -100,7 +107,7 @@ function runScripts() {
         return 0
     fi
 
-    bash $SRC_DIR/*.sh
+    bash "$SRC_DIR/*.sh"
 }
 
 function echoH1() {

@@ -1,3 +1,11 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ -n ${DEBUG:+} ]]; then
+  set -x
+fi
+
 ### .NET Core
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
@@ -9,13 +17,15 @@ eval "$(anyenv init -)"
 export GHQ_ROOT="${HOME}/Project"
 
 ### GnuPG
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 ### source ~/.zshrc.d
 RC_FILE_DIR="${HOME}/.zshrc.d"
-if [[ -e $RC_FILE_DIR ]]; then
-    for RC_FILE in ${RC_FILE_DIR}/*.sh; do
-        source $RC_FILE
+if [[ -e "$RC_FILE_DIR" ]]; then
+    for RC_FILE in "${RC_FILE_DIR}"/*.sh; do
+        # shellcheck disable=SC1090
+        source "$RC_FILE"
     done
 fi
 
