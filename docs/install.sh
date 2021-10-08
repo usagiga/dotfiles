@@ -95,6 +95,10 @@ function runScripts() {
         echo "No file to run"
         return 0
     fi
+    if [[ -n "${SKIP_SCRIPTS+x}" ]]; then
+        echo "Set vars as skip to run scripts, skipping..."
+        return 0
+    fi
 
     bash $SRC_DIR/*.sh
 }
