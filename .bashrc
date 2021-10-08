@@ -1,11 +1,3 @@
-#!/bin/bash
-
-set -euo pipefail
-
-if [[ -n ${DEBUG:+} ]]; then
-  set -x
-fi
-
 ### .NET Core
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
