@@ -93,7 +93,7 @@ function genSymlinks() {
 
         # If source is file, create it as symlink
         if [[ -f "${SRC_PATH}" ]]; then
-            echoH2 "${LN_BIN} -s $DST_PATH"
+            echoH2 "${LN_BIN} -s ${SRC_PATH} ${DST_PATH}"
             if [[ -e "$DST_PATH" ]]; then
                 echo 'symlink exists. skipped'
                 continue
