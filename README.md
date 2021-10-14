@@ -84,6 +84,8 @@ curl -fsSL https://dot.usagiga.me/install.sh | bash
 - /dotfiles.init.d
     - user defined scripts run on installing
     - if you want to skip it, set `SKIP_SCRIPTS=1`
+- /root
+    - system config root (`/`)
 - /docs
     - for GitHub Pages
 - /scripts
