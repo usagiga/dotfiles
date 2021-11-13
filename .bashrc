@@ -8,6 +8,10 @@ eval "$(anyenv init -)"
 ### github.com/x-motemen/ghq
 export GHQ_ROOT="${HOME}/Project"
 
+### Jetbrains IDE
+# Turn on jetbrains-toolbox settings -> Tools -> Generate shell scripts
+export PATH="${PATH}:${HOME}/.local/bin"
+
 ### GnuPG
 export GPG_TTY=$(tty)
 
