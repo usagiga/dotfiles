@@ -1,0 +1,29 @@
+window:
+    decorations: full 
+    padding:
+        x: 5
+        y: 5
+    opacity: 0.75
+scrolling:
+    history: 10000
+    multiplier: 3
+    auto_scroll: true
+font:
+    normal:
+        family: monospace
+        style: Regular
+    size: 12
+bell:
+    animation: EaseOut
+    duration: 300
+    color: "#333333"
+key_bindings:
+    - { key: N, mods: Control, action: SpawnNewInstance }
+    # tmux
+    - { key: T, mods: Control, chars: "\x02\x63" } # ^b c create window
+    - { key: Left, mods: Control, chars: "\x02\x6e" } # ^b n focus next window
+    - { key: Right, mods: Control, chars: "\x02\x70" } # ^b p focus prev window
+    # Simulate Mac OS key bindings
+    - { key: C, mods: Super, chars: "\x03" } # ^c
+    - { key: W, mods: Super, chars: "\x17" } # ^w
+    - { key: B, mods: Super, chars: "\x02" } # ^b
