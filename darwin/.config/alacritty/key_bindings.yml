@@ -1,0 +1,16 @@
+key_bindings:
+    # Generic
+    - { key: T, mods: Command, chars: "\x02\x63" } # ^b c create window
+
+    # tmux Widnow
+    - { key: Left, mods: Command|Shift, chars: "\x02\x70" } # ^b n focus next window
+    - { key: Right, mods: Command|Shift, chars: "\x02\x6e" } # ^b p focus prev window
+
+    # tmux Pane
+    - { key: Backslash, mods: Command, chars: "\x02\x25" } # ^b %, split vertically
+    - { key: Minus, mods: Command, chars: "\x02\x22" } # ^b ", split horizontally
+    - { key: Left, mods: Command, chars: "\x02\x1b\x5b\x44" } # ^b Left, focus left pane
+    - { key: Up, mods: Command, chars: "\x02\x1b\x5b\x41" } # ^b Up, focus left pane
+    - { key: Right, mods: Command, chars: "\x02\x1b\x5b\x43" } # ^b Right, focus left pane
+    - { key: Down, mods: Command, chars: "\x02\x1b\x5b\x42" } # ^b Down, focus left pane
+

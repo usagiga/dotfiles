@@ -1,0 +1,23 @@
+key_bindings:
+    # Linux
+    ## Generic
+    - { key: N, mods: Control, action: SpawnNewInstance }
+    - { key: T, mods: Control, chars: "\x02\x63" } # ^b c create window
+
+    ## tmux Window
+    - { key: Left, mods: Control|Shift, chars: "\x02\x70" } # ^b n focus next window
+    - { key: Right, mods: Control|Shift, chars: "\x02\x6e" } # ^b p focus prev window
+
+    ## tmux Pane
+    - { key: Backslash, mods: Control, chars: "\x02\x25" } # ^b %, split vertically
+    - { key: Minus, mods: Control, chars: "\x02\x22" } # ^b ", split horizontally
+    - { key: Left, mods: Control, chars: "\x02\x1b\x5b\x44" } # ^b Left, focus left pane
+    - { key: Up, mods: Control, chars: "\x02\x1b\x5b\x41" } # ^b Up, focus left pane
+    - { key: Right, mods: Control, chars: "\x02\x1b\x5b\x43" } # ^b Right, focus left pane
+    - { key: Down, mods: Control, chars: "\x02\x1b\x5b\x42" } # ^b Down, focus left pane
+
+    ## Simulate Mac OS key bindings
+    - { key: C, mods: Super, chars: "\x03" } # ^c
+    - { key: W, mods: Super, chars: "\x17" } # ^w
+    - { key: B, mods: Super, chars: "\x02" } # ^b
+
