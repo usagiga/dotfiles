@@ -3,7 +3,12 @@ export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
 
 ### anyenv
-eval "$(anyenv init -)"
+export DISABLE_ANYENV=
+if [[ -z ${DISABLE_ANYENV:+x} ]]; then
+    eval "$(anyenv init -)"
+else
+    echo "disable anyenv!"
+fi
 
 ### github.com/x-motemen/ghq
 export GHQ_ROOT="${HOME}/Project"
