@@ -4,7 +4,7 @@ export PATH="$PATH:${HOME}/.dotnet/tools"
 
 ### anyenv
 DISABLE_ANYENV=
-if [[ -z "${DISABLE_ANYENV+x}" ]]; then
+if [[ -z "${DISABLE_ANYENV:+x}" ]]; then
     eval "$(anyenv init -)"
 else
     echo "disable anyenv!"
@@ -26,6 +26,6 @@ fi
 
 ### fish
 if [[ -o interactive ]]; then
-    exec fish
+    exec fish -il
 fi
 
