@@ -1,4 +1,3 @@
-# Defined via `source`
-function gc --wraps='git commit -m' --description 'alias gc git commit -m'
-  git commit -m $argv; 
+function gc --wraps='git commit -m' --wraps='git commit --allow-empty -m' --description 'alias gc git commit --allow-empty -m'
+  git commit --allow-empty -m $argv; 
 end
