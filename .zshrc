@@ -11,7 +11,7 @@ else
 fi
 
 ### github.com/x-motemen/ghq
-export GHQ_ROOT="${HOME}/Project"
+export GHQ_ROOT="${HOME}/repos"
 
 ### GnuPG
 export GPG_TTY=$(tty)
