@@ -1,0 +1,10 @@
+{
+    "keymap": "pc-ij",
+    "showShortcuts": true,
+    "editor.fontSize": 14.0,
+    "editor.ligatures": false,
+    "editor.previewTab": false,
+    "editor.softWrapEnabled": true,
+    "git.autoFetch": false,
+    "terminal.fontSize": 14.0,
+}
