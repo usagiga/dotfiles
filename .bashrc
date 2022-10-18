@@ -11,7 +11,7 @@ else
 fi
 
 ### github.com/x-motemen/ghq
-export GHQ_ROOT="${HOME}/Project"
+export GHQ_ROOT="${HOME}/repos"
 
 ### Jetbrains IDE
 # Turn on jetbrains-toolbox settings -> Tools -> Generate shell scripts
