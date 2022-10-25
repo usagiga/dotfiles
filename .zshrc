@@ -5,6 +5,9 @@ export PATH="$PATH:${HOME}/.dotnet/tools"
 ### JetBrains IDE bins
 export PATH="$PATH:${HOME}/.local/bin"
 
+### aws-vault
+export AWS_ASSUME_ROLE_TTL=1h
+
 ### anyenv
 DISABLE_ANYENV=
 if [[ -z "${DISABLE_ANYENV:+x}" ]]; then
