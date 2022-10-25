@@ -2,6 +2,9 @@
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
 
+### Rust
+export PATH="${HOME}/.cargo/bin:${PATH}"
+
 ### JetBrains IDE bins
 export PATH="$PATH:${HOME}/.local/bin"
 
