@@ -2,6 +2,9 @@
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
 
+### JetBrains IDE bins
+export PATH="$PATH:${HOME}/.local/bin"
+
 ### anyenv
 DISABLE_ANYENV=
 if [[ -z "${DISABLE_ANYENV:+x}" ]]; then
