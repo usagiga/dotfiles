@@ -1,5 +1,8 @@
 key_bindings:
     # Linux
+
+    # To infer key chars, use `showkey --ascii`
+
     ## Generic
     - { key: N, mods: Control, action: SpawnNewInstance }
     - { key: T, mods: Control, chars: "\x02\x63" } # ^b c create window
@@ -16,8 +19,12 @@ key_bindings:
     - { key: Right, mods: Control, chars: "\x02\x1b\x5b\x43" } # ^b Right, focus left pane
     - { key: Down, mods: Control, chars: "\x02\x1b\x5b\x42" } # ^b Down, focus left pane
 
+    ## Simulate default Linux key bindings
+    - { key: A, mods: Super, chars: "\x01" } # ^a
+    - { key: E, mods: Super, chars: "\x05" } # ^e
+
     ## Simulate Mac OS key bindings
     - { key: C, mods: Super, chars: "\x03" } # ^c
     - { key: W, mods: Super, chars: "\x17" } # ^w
     - { key: B, mods: Super, chars: "\x02" } # ^b
-
+    - { key: D, mods: Super, chars: "\x04" } # ^d
