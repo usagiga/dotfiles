@@ -20,6 +20,10 @@ export PATH="${PATH}:${HOME}/.local/bin"
 ### GnuPG
 export GPG_TTY=$(tty)
 
+### pnm
+export PNPM_HOME="${HOME}/.local/share/pnpm"
+export PATH="${PNPM_HOME}:${PATH}"
+
 ### source ~/.zshrc.d
 RC_FILE_DIR="${HOME}/.zshrc.d"
 if [[ -e $RC_FILE_DIR ]]; then
@@ -37,3 +41,4 @@ case $- in
         exec fish
         ;;
 esac
+
