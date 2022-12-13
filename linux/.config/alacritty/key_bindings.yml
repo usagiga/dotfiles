@@ -27,3 +27,6 @@ key_bindings:
     - { key: W, mods: Super, chars: "\x17" } # ^w
     - { key: B, mods: Super, chars: "\x02" } # ^b
     - { key: D, mods: Super, chars: "\x04" } # ^d
+
+    ## Disable default key bindings
+    - { key: N, mods: Control, action: None }

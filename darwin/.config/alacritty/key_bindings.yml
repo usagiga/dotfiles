@@ -14,3 +14,7 @@ key_bindings:
     - { key: Right, mods: Command, chars: "\x02\x1b\x5b\x43" } # ^b Right, focus left pane
     - { key: Down, mods: Command, chars: "\x02\x1b\x5b\x42" } # ^b Down, focus left pane
 
+    # Disable default key bindings
+    - { key: N, mods: Command, action: None }
+
+
