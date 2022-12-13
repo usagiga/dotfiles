@@ -1,7 +1,7 @@
 if status is-interactive
     # tmux
     if not set -q TMUX
-        exec tmux
+        tmux new-session -A -s main
     end
 end
 

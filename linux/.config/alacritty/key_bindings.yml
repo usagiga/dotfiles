@@ -4,7 +4,6 @@ key_bindings:
     # To infer key chars, use `showkey --ascii`
 
     ## Generic
-    - { key: N, mods: Control, action: SpawnNewInstance }
     - { key: T, mods: Control, chars: "\x02\x63" } # ^b c create window
 
     ## tmux Window
