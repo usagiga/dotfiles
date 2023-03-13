@@ -28,6 +28,9 @@ function main() {
         exit 1
     fi
 
+    # Define global vars
+    SUBMODULE_DIRS=$(git submodule status -- . 2>&1 | cut -d ' ' -f 3)
+
     # Generate symlinks
     echoH1 'Install common configuration files'
     genSymlinks ${REPO_ROOT_DIR} ${HOME}
@@ -80,6 +83,21 @@ function genSymlinks() {
 
         # If source is directory, make it
         if [ -d "${SRC_PATH}" ]; then
+            # If source is git submodule, create it as symlink
+            for SUBMODULE in ${SUBMODULE_DIRS}; do
+                if [[ "${REPO_ROOT_DIR}/${SUBMODULE}" =  "${SRC_PATH}" ]]; then
+                    echo 'submodule detected. make symlink'
+                    echoH2 "${LN_BIN} -s ${SRC_PATH} ${DST_PATH}"
+                    if [[ -L "$DST_PATH" ]]; then
+                        echo 'symlink exists. skipped'
+                        continue 2
+                    fi
+                    ${LN_BIN} -s "${SRC_PATH}" "${DST_PATH}"
+                
+                    continue 2
+                fi
+            done
+
             echoH2 "${MKDIR_BIN} $DST_PATH"
             if [[ -e $DST_PATH ]]; then
                 echo 'directory exists. skipped'
