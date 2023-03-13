@@ -1,3 +1,6 @@
+### Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 ### .NET Core
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:${HOME}/.dotnet/tools"
