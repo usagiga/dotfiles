@@ -14,4 +14,6 @@ set ignorecase
 set smartcase
 set wrapscan
 set hlsearch
+set endofline
+set fixendofline
 
