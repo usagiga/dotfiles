@@ -42,6 +42,8 @@ cask "aws-vault"
 cask "chromium"
 cask "firefox"
 cask "google-cloud-sdk"
+cask "jetbrains-toolbox"
+cask "slack"
 cask "wireshark"
 cask "zoom"
 
