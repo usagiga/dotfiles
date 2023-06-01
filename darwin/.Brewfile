@@ -12,7 +12,6 @@ brew "bash"
 brew "circleci"
 brew "cliclick"
 brew "direnv"
-brew "docker", link: false
 brew "docker-compose", link: false
 brew "docker-credential-helper", link: false
 brew "ffmpeg"
@@ -40,10 +39,12 @@ cask "alacritty"
 cask "amethyst"
 cask "aws-vault"
 cask "chromium"
+cask "docker"
 cask "firefox"
 cask "google-cloud-sdk"
 cask "jetbrains-toolbox"
+cask "quail"
 cask "slack"
+cask "visual-studio-code"
 cask "wireshark"
 cask "zoom"
-
