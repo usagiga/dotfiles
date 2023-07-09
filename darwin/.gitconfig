@@ -8,6 +8,8 @@
 	ff = only
 [push]
 	default = current
+[fetch]
+	prune = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
