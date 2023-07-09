@@ -5,7 +5,7 @@
 [credential]
 	helper = osxkeychain
 [pull]
-    ff=only
+	ff = only
 [push]
 	default = current
 [filter "lfs"]

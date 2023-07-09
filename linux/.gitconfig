@@ -5,7 +5,7 @@
 [credential]
 	helper = store
 [pull]
-    ff=only
+	ff = only
 [push]
 	default = current
 [filter "lfs"]
