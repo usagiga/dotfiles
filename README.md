@@ -76,6 +76,14 @@ curl -fsSL https://dot.usagiga.me/install.sh | bash
 ├── dotfiles.init.d
 │   └── jb-anyenv.sh
 ├── .gitmodules
+├── .idea
+│   ├── dotfiles.iml
+│   ├── .gitignore
+│   ├── misc.xml
+│   ├── modules.xml
+│   ├── runConfigurations.xml
+│   ├── vcs.xml
+│   └── workspace.xml
 ├── LICENSE
 ├── linux
 │   ├── .config
