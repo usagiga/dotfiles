@@ -1,5 +1,5 @@
 function new_workspace
-  set WORKSPACE_DIR "$(ghq root)/workspace/$argv"
+  set WORKSPACE_DIR (ghq root)/workspace/$argv
   if [ -d $WORKSPACE_DIR ]
     echo 'directory already exists' 1>&2
     exit 1
