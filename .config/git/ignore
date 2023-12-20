@@ -3,6 +3,7 @@
 .vscode
 .vs
 .fleet
+*.swp
 
 # MacOS
 .DS_Store
