@@ -8,7 +8,7 @@ GREEN="${ESC}[32m"
 CYAN="${ESC}[36m"
 
 REPO_ROOT_DIR=${HOME}/repos/github.com/usagiga/dotfiles
-IGNORE_PATHS=".git .gitmodules .github .idea docs darwin linux root scripts dotfiles.init.d LICENSE README.md"
+IGNORE_PATHS=".git .gitmodules .github .idea .editorconfig .editorconfig.d docs darwin linux root scripts dotfiles.init.d LICENSE README.md"
 
 function main() {
     # Clone or pull repo
@@ -20,7 +20,7 @@ function main() {
         cd "$REPO_ROOT_DIR"
         git pull
     fi
-    
+
     # Guard unsupported OS
     OS_NAME="$(uname -s | awk '{print tolower($0)}')"
     if [[ "${OS_NAME}" != 'darwin' && "${OS_NAME}" != 'linux' ]]; then
@@ -93,7 +93,7 @@ function genSymlinks() {
                         continue 2
                     fi
                     ${LN_BIN} -s "${SRC_PATH}" "${DST_PATH}"
-                
+
                     continue 2
                 fi
             done
