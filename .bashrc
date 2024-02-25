@@ -20,7 +20,7 @@ export PATH="${PATH}:${HOME}/.local/bin"
 ### GnuPG
 export GPG_TTY=$(tty)
 
-### pnm
+### pnpm
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export PATH="${PNPM_HOME}:${PATH}"
 
@@ -41,4 +41,3 @@ case $- in
         exec fish
         ;;
 esac
-
