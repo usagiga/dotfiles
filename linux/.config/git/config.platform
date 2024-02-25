@@ -1,0 +1,4 @@
+[user]
+	signingkey = FD6406A6C1474A89
+[credential]
+	helper = store

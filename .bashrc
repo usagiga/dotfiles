@@ -13,8 +13,8 @@ fi
 ### github.com/x-motemen/ghq
 export GHQ_ROOT="${HOME}/repos"
 
-### Jetbrains IDE
-# Turn on jetbrains-toolbox settings -> Tools -> Generate shell scripts
+### Local Binaries
+### (e.g. JetBrains IDEs, git subcommands)
 export PATH="${PATH}:${HOME}/.local/bin"
 
 ### GnuPG

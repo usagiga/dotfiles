@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+TARGET_BRANCH=$(git branch -a | peco | sed -Ee 's/^\*?[ \t]+(remotes\/origin\/)?//g')
+git switch "${TARGET_BRANCH}"

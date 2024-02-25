@@ -8,7 +8,8 @@ export PATH="$PATH:${HOME}/.dotnet/tools"
 ### Rust
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
-### JetBrains IDE bins
+### Local Binaries
+### (e.g. JetBrains IDEs, git subcommands)
 export PATH="$PATH:${HOME}/.local/bin"
 
 ### aws-vault

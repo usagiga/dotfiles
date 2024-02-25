@@ -1,0 +1,65 @@
+[user]
+	name = usagiga
+	email = usagiga@usagiga.me
+
+# Commit
+[commit]
+    verbose = true
+
+# Act with Remote(pull, push, fetch)
+# (to detect data corruption, use fsckobjects)
+[pull]
+	ff = only
+[push]
+	default = current
+    autoSetupRemote = true
+    followtags = true
+[fetch]
+    prune = true
+    prunetags = true
+    fsckobjects = true
+[transfer]
+    fsckobjects = true
+[receive]
+    fsckObjects = true
+
+# Merge, Rebase
+[merge]
+	conflictStyle = zdiff3
+[rebase]
+	autosquash = true
+    autostash = true
+    missingCommitsCheck = error
+[rerere]
+    enabled = true
+
+# Diff
+[diff]
+    algorithm = histogram
+    submodule = log
+[status]
+    submoduleSummary = true
+
+# Misc
+[init]
+	defaultBranch = main
+[advice]
+	detachedHead = false
+[help]
+    autocorrect = prompt
+[submodule]
+    recurse = true
+[log]
+    date = iso
+
+# Git Large File Storage
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+# Include
+[include]
+	path = ~/.config/git/config.platform
+	path = ~/.config/git/config.local
