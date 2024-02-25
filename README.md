@@ -23,56 +23,49 @@ curl -fsSL https://dot.usagiga.me/install.sh | bash
 │   │   │   └── gh.fish
 │   │   ├── config.fish
 │   │   ├── fish_variables
-│   │   ├── functions
-│   │   │   ├── alias_auto.fish
-│   │   │   ├── byusagiga.fish
-│   │   │   ├── cl.fish
-│   │   │   ├── clgs.fish
-│   │   │   ├── fish_prompt.fish
-│   │   │   ├── ga.fish
-│   │   │   ├── gb.fish
-│   │   │   ├── gcc.fish
-│   │   │   ├── gcd.fish
-│   │   │   ├── gc.fish
-│   │   │   ├── gd.fish
-│   │   │   ├── g.fish
-│   │   │   ├── gget.fish
-│   │   │   ├── gl.fish
-│   │   │   ├── gll.fish
-│   │   │   ├── gore.fish
-│   │   │   ├── gp.fish
-│   │   │   ├── gprune.fish
-│   │   │   ├── gpull.fish
-│   │   │   ├── gre.fish
-│   │   │   ├── gres.fish
-│   │   │   ├── gr.fish
-│   │   │   ├── gsb.fish
-│   │   │   ├── gsbr.fish
-│   │   │   ├── gs.fish
-│   │   │   ├── gst.fish
-│   │   │   ├── gstp.fish
-│   │   │   └── new_workspace.fish
-│   │   └── gpull.fish
+│   │   └── functions
+│   │       ├── alias_auto.fish
+│   │       ├── byusagiga.fish
+│   │       ├── cl.fish
+│   │       ├── clgs.fish
+│   │       ├── fish_prompt.fish
+│   │       ├── gcd.fish
+│   │       ├── gc.fish
+│   │       ├── g.fish
+│   │       ├── gget.fish
+│   │       ├── gl.fish
+│   │       ├── gll.fish
+│   │       ├── goenv_update.fish
+│   │       ├── gore.fish
+│   │       ├── gp.fish
+│   │       ├── gre.fish
+│   │       ├── gres.fish
+│   │       ├── gs.fish
+│   │       └── new_workspace.fish
 │   └── git
+│       ├── config
+│       ├── config.local
 │       └── ignore
 ├── darwin
 │   ├── .Brewfile
 │   ├── .config
-│   │   └── alacritty
-│   │       ├── font.yml
-│   │       └── key_bindings.yml
+│   │   ├── alacritty
+│   │   │   ├── font.yml
+│   │   │   └── key_bindings.yml
+│   │   ├── fish
+│   │   │   └── functions
+│   │   │       ├── dated2u.fish
+│   │   │       └── dateu2d.fish
+│   │   ├── git
+│   │   │   └── config.platform
+│   │   ├── skhd
+│   │   │   └── skhdrc
+│   │   └── yabai
+│   │       └── yabairc
 │   ├── dotfiles.init.d
 │   │   └── install_brew.sh
-│   ├── .gitconfig
 │   └── .gnupg
 │       └── gpg-agent.conf
-├── docs
-│   ├── CNAME
-│   ├── _config.yml
-│   ├── index.html
-│   ├── install.sh
-│   ├── .nojekyll
-│   └── robots.txt
 ├── dotfiles.init.d
 │   └── jb-anyenv.sh
 ├── .gitmodules
@@ -94,12 +87,13 @@ curl -fsSL https://dot.usagiga.me/install.sh | bash
 │   │   │   └── functions
 │   │   │       ├── pbcopy.fish
 │   │   │       └── pbpaste.fish
+│   │   ├── git
+│   │   │   └── config.platform
 │   │   └── paru
 │   │       └── paru.conf
 │   ├── .fleet
 │   │   ├── settings.json
 │   │   └── themes
-│   ├── .gitconfig
 │   ├── root
 │   │   ├── etc
 │   │   │   └── environment
@@ -120,9 +114,11 @@ curl -fsSL https://dot.usagiga.me/install.sh | bash
 │   │   └── xmonad.hs
 │   └── .zshrc.d
 │       └── ssh-agent.sh
-├── README.md
-├── scripts
-│   └── install.sh -> ../docs/install.sh
+├── .local
+│   └── bin
+│       ├── git-fixup
+│       ├── git-squash
+│       └── git-switch-interactive
 ├── .tmux
 │   └── plugins
 │       └── tpm
