@@ -1,2 +1,6 @@
 # If you want to use additional configs,
 # write here
+
+# Hint: Skip Worktree / Assume Unchanged
+# to see skip worktree(S) / assume unchanged(t) files,
+#   $ git ls-files -v | grep '^[St]'
