@@ -1,5 +1,9 @@
 ### Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval $(/opt/homebrew/bin/brew shellenv)
+
+### Zsh completion (Homebrew)
+export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+
 
 ### .NET Core
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
@@ -41,4 +45,3 @@ fi
 if [[ -o interactive ]]; then
     exec fish -il
 fi
-
