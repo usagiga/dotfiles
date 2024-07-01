@@ -44,6 +44,9 @@ export GPG_TTY=$(tty)
 ### Chrome/Firefox debug unpackking TLS/SSL
 # export SSLKEYLOGFILE=${HOME}/Desktop/tls_key.log
 
+### docker on lima
+# export DOCKER_HOST=unix://$HOME/docker.sock
+
 ### source ~/.zshrc.d
 local RC_FILE_DIR="${HOME}/.zshrc.d"
 if [[ -e $RC_FILE_DIR ]]; then
