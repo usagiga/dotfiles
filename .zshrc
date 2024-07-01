@@ -4,6 +4,19 @@ eval $(/opt/homebrew/bin/brew shellenv)
 ### Zsh completion (Homebrew)
 export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 
+### anyenv (deprecated)
+# eval "$(anyenv init -)"
+
+# proto
+export PROTO_HOME="$HOME/.proto"
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
+
+# mise
+eval "$(mise activate zsh)"
+
+### go
+export GOBIN="$HOME/go/bin"
+export PATH="$GOBIN:$PATH"
 
 ### .NET Core
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
@@ -12,20 +25,15 @@ export PATH="$PATH:${HOME}/.dotnet/tools"
 ### Rust
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
+### Flutter
+export FLUTTER_ROOT="$(mise where flutter)"
+
 ### Local Binaries
 ### (e.g. JetBrains IDEs, git subcommands)
 export PATH="$PATH:${HOME}/.local/bin"
 
 ### aws-vault
 export AWS_ASSUME_ROLE_TTL=1h
-
-### anyenv
-DISABLE_ANYENV=
-if [[ -z "${DISABLE_ANYENV:+x}" ]]; then
-    eval "$(anyenv init -)"
-else
-    echo "disable anyenv!"
-fi
 
 ### github.com/x-motemen/ghq
 export GHQ_ROOT="${HOME}/repos"
