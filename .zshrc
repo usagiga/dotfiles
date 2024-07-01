@@ -41,6 +41,9 @@ export GHQ_ROOT="${HOME}/repos"
 ### GnuPG
 export GPG_TTY=$(tty)
 
+### Chrome/Firefox debug unpackking TLS/SSL
+# export SSLKEYLOGFILE=${HOME}/Desktop/tls_key.log
+
 ### source ~/.zshrc.d
 local RC_FILE_DIR="${HOME}/.zshrc.d"
 if [[ -e $RC_FILE_DIR ]]; then
