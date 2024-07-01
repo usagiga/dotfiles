@@ -13,8 +13,6 @@ brew "bash"
 brew "circleci"
 brew "cliclick"
 brew "direnv"
-brew "docker-compose", link: false
-brew "docker-credential-helper", link: false
 brew "ffmpeg"
 brew "fish"
 brew "gh"
