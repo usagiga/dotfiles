@@ -39,6 +39,8 @@
     submodule = log
 [status]
     submoduleSummary = true
+[difftool]
+    prompt = false
 
 # Misc
 [init]

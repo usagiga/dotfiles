@@ -2,3 +2,8 @@
 	signingkey = 10A0BCEB522C6BC3549F6A03D9408B79EADC9215
 [credential]
 	helper = osxkeychain
+
+[diff]
+    tool = idea
+[difftool "idea"]
+    cmd = open -nWa 'IntelliJ IDEA Ultimate.app' --args diff "$LOCAL" "$REMOTE"
