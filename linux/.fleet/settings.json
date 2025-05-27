@@ -1,5 +1,5 @@
 {
-    "keymap": "pc-ij",
+    "keymap": "intellij",
     "showShortcuts": true,
     "editor.fontSize": 14.0,
     "editor.ligatures": false,
