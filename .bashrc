@@ -50,6 +50,3 @@ esac
 # go
 export GOBIN="$HOME/go/bin"
 export PATH="$GOBIN:$PATH"
-# go
-export GOBIN="$HOME/go/bin"
-export PATH="$GOBIN:$PATH"
