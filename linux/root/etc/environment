@@ -6,3 +6,7 @@
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
+
+# Node.js (npm/pnpm)
+npm_config_min_release_age=7
+PNPM_CONFIG_MINIMUM_RELEASE_AGE=10080
